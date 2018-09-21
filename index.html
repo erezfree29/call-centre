@@ -31,14 +31,14 @@
        <tr><td>Sunday</td><td>closed</td></tr>
        <tr><td>Bank Holidays</td><td>closed</td></tr>
      </tbody>
-     </table>
-    </div>
-  </div>
-  <div id="phone">
-   contact number 0330 223 35 25
-  </div>
+   </table>
+ </div>
+</div>
+<div id="phone">
+ contact number 0330 223 35 25
+</div>
 
-     <div id="confirmation" ></div>
+<div id="confirmation" ></div>
 
 </div>
 
@@ -52,32 +52,32 @@
 
 <script>
   let status = "open"
- window.onload = function(){
-  let d = new Date();
-  let day = d.getDay()+1;
-  let hour = d.getHours();
-  let date = d.getDate();
-  let month = d.getMonth()+1;
-  let phone = document.getElementById("phone");
+  window.onload = function(){
+    let d = new Date();
+    let day = d.getDay()+1;
+    let hour = d.getHours();
+    let date = d.getDate();
+    let month = d.getMonth()+1;
+    let phone = document.getElementById("phone");
 
 
 
-  if ((day === 2) || (day===3) || (day===5)) {
+    if ((day === 2) || (day===3) || (day===5)) {
 
-   if ((hour < 8) || (hour > 19)) {
+     if ((hour < 8) || (hour > 19)) {
 
 
-    status = "closed"
+       status = "closed"
 
 
 
     }
 
-}
+  }
 
 
 
-else if ((day === 8) || (day=== 6)) {
+  else if ((day === 8) || (day=== 6)) {
 
    if ((hour < 7) || (hour > 20)) {
 
@@ -88,9 +88,9 @@ else if ((day === 8) || (day=== 6)) {
 
 
 
-}
+  }
 
-else if (day === 7){
+  else if (day === 7){
 
    if ((hour > 7) || (hour <16)) {
 
@@ -100,19 +100,19 @@ else if (day === 7){
     status = "closed";
 
 
-}
+  }
 
-else if (day === 1){
+  else if (day === 1){
 
 
     status = "closed";
 
 
-}
+  }
 
-else
+  else
 
-{
+  {
    if (month===12)
 
    {
@@ -121,47 +121,47 @@ else
 
     {
 
-        status = "closed";
+      status = "closed";
 
     }
 
-   }
+  }
 
 }
 
 
- if (status === "closed")
+if (status === "closed")
 
- {
+{
 
-    phone.innerHTML = "request a call back";
-    let para = document.createElement("form");
-    let node = document.createTextNode("Name\n");
-    let node2= document.createTextNode("Phone\n");
-    para.appendChild(node);
-    var element = document.getElementById("phone");
-    element.appendChild(para);
-    let input = document.createElement("input");
-    input.classList.add("field");
-    let input2 = document.createElement("input");
-    para.appendChild(input);
-    let input3 = document.createElement("input");
-    input3.classList.add("input3");
-    let row = document.createElement("br");
-    let number = document.createElement("number");
-    number.appendChild(node2);
-    para.appendChild(row);
-    para.appendChild(number);
-    para.appendChild(input2);
-    para.appendChild(input3);
-    input.type = "text";
-    input2.type = "text";
-    input3.type = "submit";
-    input3.onclick = myFunction;
+  phone.innerHTML = "request a call back";
+  let para = document.createElement("form");
+  let node = document.createTextNode("Name\n");
+  let node2= document.createTextNode("Phone\n");
+  para.appendChild(node);
+  var element = document.getElementById("phone");
+  element.appendChild(para);
+  let input = document.createElement("input");
+  input.classList.add("field");
+  let input2 = document.createElement("input");
+  para.appendChild(input);
+  let input3 = document.createElement("input");
+  input3.classList.add("input3");
+  let row = document.createElement("br");
+  let number = document.createElement("number");
+  number.appendChild(node2);
+  para.appendChild(row);
+  para.appendChild(number);
+  para.appendChild(input2);
+  para.appendChild(input3);
+  input.type = "text";
+  input2.type = "text";
+  input3.type = "submit";
+  input3.onclick = myFunction;
 
 
 
- }
+}
 
 
 }
@@ -172,13 +172,13 @@ else
 // If the user clicks in the window, set the background color of <body> to yellow
 function myFunction() {
 
-    let confirmation = document.getElementById("confirmation");
+  let confirmation = document.getElementById("confirmation");
 
-    let name = document.getElementsByTagName("input")[0];
-    let phone = document.getElementsByTagName("input")[1];
+  let name = document.getElementsByTagName("input")[0];
+  let phone = document.getElementsByTagName("input")[1];
 
-    confirmation.innerHTML = "Thank you " +" " +  name.value + " we will give you a call once we are open on " + phone.value;
-    return false;
+  confirmation.innerHTML = "Thank you " +" " +  name.value + " we will give you a call once we are open on " + phone.value;
+  return false;
 }
 
 
